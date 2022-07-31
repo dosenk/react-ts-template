@@ -23,6 +23,9 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
+    "@typescript-eslint/no-unused-vars":
+      process.env.NODE_ENV === "production" ? "error" : "warn",
     "no-param-reassign": "off",
     "react/function-component-definition": [
       2,

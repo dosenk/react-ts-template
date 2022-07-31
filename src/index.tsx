@@ -2,8 +2,10 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@mui/material";
+import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+import history from "./components/Router/history";
 import { store } from "./store/store";
-import App from "./App";
+import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import theme from "./styles/mainTheme";
@@ -13,11 +15,13 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </Provider>
+    <HistoryRouter history={history}>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </Provider>
+    </HistoryRouter>
   </React.StrictMode>,
 );
 

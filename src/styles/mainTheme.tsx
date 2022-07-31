@@ -1,20 +1,20 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   palette: {
     myColor: {
-      main: '#000',
-      myColor: '#123212',
+      main: "#000",
+      myColor: "#123212",
     },
   },
 });
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Palette {
-    myColor: Palette['primary'];
+    myColor: Palette["primary"];
   }
   interface PaletteOptions {
-    myColor: PaletteOptions['primary'];
+    myColor: PaletteOptions["primary"];
   }
 
   interface PaletteColor {

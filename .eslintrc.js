@@ -23,6 +23,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
+    "no-param-reassign": "off",
     "react/function-component-definition": [
       2,
       {

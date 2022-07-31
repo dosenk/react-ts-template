@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 import { Theme } from "@mui/material/styles/createTheme";
+import BhuTukaExpandedOne from "../assets/fonts/BhuTukaExpandedOne-Regular.ttf";
 
 export interface ITheme {
   theme: Theme;
@@ -24,6 +25,50 @@ const theme: Theme = createTheme({
       tablet: 640,
       laptop: 1024,
       desktop: 1200,
+    },
+  },
+
+  typography: {
+    fontFamily: [
+      // "-apple-system",
+      // "BlinkMacSystemFont",
+      // '"Segoe UI"',
+      // "Roboto",
+      // '"Helvetica Neue"',
+      // "Arial",
+      "BhuTukaExpandedOne",
+      // "sans-serif",
+    ].join(","),
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        @font-face {
+          font-family: 'BhuTukaExpandedOne';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('BhuTukaExpandedOne'), local('BhuTukaExpandedOne-Regular'), url(${BhuTukaExpandedOne}) format('ttf');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
+    },
+    MuiTypography: {
+      defaultProps: {
+        fontFamily: "BhuTukaExpandedOne",
+      },
+      styleOverrides: {
+        h1: `
+        @font-face {
+          font-family: 'BhuTukaExpandedOne';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('BhuTukaExpandedOne'), local('BhuTukaExpandedOne-Regular'), url(${BhuTukaExpandedOne}) format('ttf');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
+      },
     },
   },
 });

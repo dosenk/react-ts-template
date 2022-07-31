@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
 import history from "./components/Router/history";
 import { store } from "./store/store";
@@ -18,6 +18,7 @@ root.render(
     <HistoryRouter history={history}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
+          <CssBaseline enableColorScheme />
           <App />
         </ThemeProvider>
       </Provider>
